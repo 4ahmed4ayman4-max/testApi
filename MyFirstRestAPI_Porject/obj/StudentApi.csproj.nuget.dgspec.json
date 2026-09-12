@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ahmed\\Downloads\\01 Implementing Role-Based Authorization\\01 Implementing Role-Based Authorization\\01 StudentAPIServer v7\\MyFirstRestAPI_Porject\\StudentApi.csproj": {}
+    "F:\\testApi\\MyFirstRestAPI_Porject\\StudentApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ahmed\\Downloads\\01 Implementing Role-Based Authorization\\01 Implementing Role-Based Authorization\\01 StudentAPIServer v7\\MyFirstRestAPI_Porject\\StudentApi.csproj": {
+    "F:\\testApi\\MyFirstRestAPI_Porject\\StudentApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ahmed\\Downloads\\01 Implementing Role-Based Authorization\\01 Implementing Role-Based Authorization\\01 StudentAPIServer v7\\MyFirstRestAPI_Porject\\StudentApi.csproj",
+        "projectUniqueName": "F:\\testApi\\MyFirstRestAPI_Porject\\StudentApi.csproj",
         "projectName": "StudentApi",
-        "projectPath": "C:\\Users\\ahmed\\Downloads\\01 Implementing Role-Based Authorization\\01 Implementing Role-Based Authorization\\01 StudentAPIServer v7\\MyFirstRestAPI_Porject\\StudentApi.csproj",
-        "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ahmed\\Downloads\\01 Implementing Role-Based Authorization\\01 Implementing Role-Based Authorization\\01 StudentAPIServer v7\\MyFirstRestAPI_Porject\\obj\\",
+        "projectPath": "F:\\testApi\\MyFirstRestAPI_Porject\\StudentApi.csproj",
+        "packagesPath": "C:\\Users\\LAP X\\.nuget\\packages\\",
+        "outputPath": "F:\\testApi\\MyFirstRestAPI_Porject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\LAP X\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

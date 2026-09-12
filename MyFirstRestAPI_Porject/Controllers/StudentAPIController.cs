@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Stripe.Issuing;
 using Stripe.TestHelpers.Issuing;
 using StudentApi.DataSimulation;
+using StudentApi.DTOs;
 using StudentApi.Models;
 using System.Collections.Generic;
 using System.Security.Claims;
@@ -40,10 +41,18 @@ namespace StudentApi.Controllers
         [HttpGet("Passed", Name = "GetPassedStudents")]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
-        public ActionResult<IEnumerable<Student>> GetPassedStudents()
-
+        public ActionResult<IEnumerable<StudentDTO>> GetPassedStudents()
         {
-            var passedStudents = StudentDataSimulation.StudentsList.Where(student => student.Grade >= 50).ToList();
+            var passedStudents = StudentDataSimulation.StudentsList
+                .Where(student => student.Grade >= 50)
+                .Select(student => new StudentDTO
+                {
+                    Id = student.Id,
+                    Name = student.Name,
+                    Grade = student.Grade,
+                    Role = student.Role
+                })
+                .ToList();
 
             if (passedStudents.Count == 0)
                 return NotFound("No Students Passed");
@@ -75,9 +84,16 @@ namespace StudentApi.Controllers
                 return BadRequest($"Not accepted ID {id}");
 
             var student = StudentDataSimulation.StudentsList
-                                .FirstOrDefault(s => s.Id == id);
+                               .FirstOrDefault(s => s.Id == id);
 
-            if (student == null)
+            var studentDTO = new StudentDTO
+            {
+                Id = student.Id,
+                Name = student.Name,
+                Grade = student.Grade,
+            };
+
+            if (studentDTO == null)
                 return NotFound($"Student with ID {id} not found.");
 
             var authResult = await _authorizationService
@@ -86,7 +102,7 @@ namespace StudentApi.Controllers
             if (!authResult.Succeeded)
                 return Forbid();
 
-            return Ok(student);
+            return Ok(studentDTO);
         }
 
         [Authorize(Roles = "Admin")]
